@@ -25,7 +25,9 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.contact {
+  color:#00CC00;
+}
 canvas {
   display:block;
   height: 100%;
@@ -33,8 +35,9 @@ canvas {
 </style>
 </head>
 <body class="bg">
-<p>I f you want contact me send me a e-mail to yonhir@hotmail.com.</p>
-<canvas id="matrix"></canvas>
+<canvas id="matrix">
+<p class="contact">To contact me, Send me a e-mail to yonhir@hotmail.com.</p>
+</canvas>
 <script type="text/javascript">
 // geting canvas by Boujjou Achraf
 var c = document.getElementById("matrix");
@@ -66,7 +69,7 @@ function draw()
     ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
     ctx.fillRect(0, 0, c.width, c.height);
 
-    ctx.fillStyle = "#f4427d";//green text
+    ctx.fillStyle = "#00cc00";//green text
     ctx.font = font_size + "px arial";
     //looping over drops
     for(var i = 0; i < drops.length; i++)
