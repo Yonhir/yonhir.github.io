@@ -1,10 +1,10 @@
 // geting canvas by Boujjou Achraf
-var c = document.getElementById("matrix");
-var ctx = c.getContext("2d");
+var canvas_object = document.getElementById("matrix");
+var ctx = canvas_object.getContext("2d");
 
 //making the canvas full screen
-c.height = window.innerHeight;
-c.width = window.innerWidth;
+canvas_object.height = window.innerHeight;
+canvas_object.width = window.innerWidth;
 
 //chinese characters - taken from the unicode charset
 var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
@@ -12,7 +12,7 @@ var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^
 matrix = matrix.split("");
 
 var font_size = 10;
-var columns = c.width/font_size; //number of columns for the rain
+var columns = canvas_object.width/font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];
 //x below is the x coordinate
@@ -26,7 +26,7 @@ function draw()
     //Black BG for the canvas
     //translucent BG to show trail
     ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillRect(0, 0, canvas_object.width, canvas_object.height);
 
     ctx.fillStyle = "#00cc00";//green text
     ctx.font = font_size + "px arial";
@@ -40,7 +40,7 @@ function draw()
 
         //sending the drop back to the top randomly after it has crossed the screen
         //adding a randomness to the reset to make the drops scattered on the Y axis
-        if(drops[i]*font_size > c.height && Math.random() > 0.975)
+        if(drops[i]*font_size > canvas_object.height && Math.random() > 0.975)
             drops[i] = 0;
 
         //incrementing Y coordinate
